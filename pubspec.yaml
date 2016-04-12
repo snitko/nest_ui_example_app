@@ -1,0 +1,9 @@
+name: nest_ui_app
+version: 0.1.0
+description: >
+  An example app for NestUI
+author: Roman Snitko <roman.snitko@gmail.com>
+
+dependencies:
+  nest_ui:
+    path: '../nest_ui'

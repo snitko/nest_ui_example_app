@@ -4,11 +4,7 @@ import 'dart:html';
 class Button extends Component {
   List native_events = ["click"];
   Button() {
-    event_handlers.add(event: 'click', handler: (self) => disappear());
-  }
-
-  disappear() {
-    dom_element.style..display="none"; 
+    event_handlers.add(event: 'click', handler: (self) => behave('hide'));
   }
 }
 

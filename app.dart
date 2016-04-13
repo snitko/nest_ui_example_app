@@ -4,12 +4,11 @@ import 'dart:html';
 class Button extends Component {
   List native_events = ["click"];
   Button() {
-    event_handlers.add(role: #self, event: 'click', handler: (self) => disappear());
-    print(event_handlers.map);
+    event_handlers.add(event: 'click', handler: (self) => disappear());
   }
 
   disappear() {
-    dom_element.style..opacity=0; 
+    dom_element.style..display="none"; 
   }
 }
 

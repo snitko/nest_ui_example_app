@@ -2,12 +2,26 @@
 <html>
   <head>
     <title>Simple Dart App</title>
+  
+    <style>
+      div[data-component-class=CommentComponent] { margin: 1em 0; padding: 1em; border: solid 1px #aaa; }
+    </style>
+
+
   </head>
-  <body>
+  <body data-component-class="RootComponent">
     <h1>Hello, Dart!</h1>
     <script type="application/dart" src="app.dart"></script>
 
-    <button data-component-property="caption">Click me</button>
+    <div data-component-class="CommentFormComponent">
+      <textarea data-component-class="TextArea"></textarea>
+      <br/>
+      <button data-component-class="ButtonComponent" data-component-property="caption" data-component-roles="submit">Submit Comment</button>
+    </div>
+
+    <div data-component-class="CommentComponent" data-component-template="CommentComponent" data-component-property="body">
+      This is an example of a comment
+    </div>
 
   </body>
 </html>

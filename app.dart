@@ -11,6 +11,10 @@ class ButtonComponent extends Component {
 
 class CommentComponent extends Component {
   final List attribute_names = ["body"];
+  List native_events = ["delete.click"];
+  CommentComponent() {
+    event_handlers.add(event: 'click', role: 'self.delete', handler: (self,p) => self.remove());
+  }
 }
 
 class CommentFormComponent extends Component {

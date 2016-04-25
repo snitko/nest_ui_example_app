@@ -5,9 +5,13 @@
   
     <style>
       div[data-component-class=CommentComponent] { margin: 1em 0; padding: 1em; border: solid 1px #aaa; }
+      div[data-component-class=CommentComponent] div[data-component-part=delete] {
+        color: red; cursor: pointer; font-size: 80%;
+      }
     </style>
 
     <script type="application/dart" src="app.dart"></script>
+    <!--<script type="application/javascript" src="app.js" defer></script>-->
 
   </head>
   <body data-component-class="RootComponent">
@@ -19,11 +23,11 @@
       <button data-component-class="ButtonComponent" data-component-property="caption" data-component-roles="submit">Submit Comment</button>
     </div>
 
-    <div data-component-class="CommentComponent" data-component-template="CommentComponent" data-component-property="body">
-      This is an example of a comment
+    <div data-component-class="CommentComponent" data-component-template="CommentComponent">
+      <div data-component-property="body">This is an example of a comment</div>
+      <div data-component-part="delete">Delete</div>
     </div>
 
-    <script type="application/javascript" src="app.js"></script>
 
   </body>
 </html>

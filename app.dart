@@ -1,6 +1,9 @@
 import 'package:nest_ui/nest_ui.dart';
 import 'dart:html';
 
+// Importing Report Adapters that we'll actually use.
+import 'package:logmaster/report_adapters/console_report_adapter.dart';
+
 class RootComponent extends Component {
 }
 
@@ -32,7 +35,12 @@ class TextAreaComponent extends Component {
 }
 
 main() {
-  var root         = new RootComponent();
-  root.dom_element = querySelector('body');
-  root.initChildComponents();
+  var logger = new Logmaster([new ConsoleReportAdapter()]);
+  try {
+    var root         = new RootComponent();
+    root.dom_element = querySelector('body');
+    root.initChildComponents();
+  } catch(e) {
+    logger.capture(e);
+  }
 }

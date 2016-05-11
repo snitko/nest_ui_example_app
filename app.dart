@@ -26,11 +26,10 @@ class CommentFormComponent extends Component {
     'content.text': { 'isLongerThan' : 5 }
   };
 
-  CommentFormComponent() : super() {
+  CommentFormComponent() {
     event_handlers.add(event: 'click', role: 'submit', handler: (self,p) {
       self.children[0].text = self.children[0].dom_element.querySelector('textarea').value;
       if(this.validate(deep: true)) {
-        print("It's valid!");
         var new_comment = new CommentComponent();
         new_comment.body = self.children[0].dom_element.querySelector('textarea').value;
         self.parent.addChild(new_comment);

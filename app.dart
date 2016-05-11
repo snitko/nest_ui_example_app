@@ -21,17 +21,26 @@ class CommentComponent extends Component {
 }
 
 class CommentFormComponent extends Component {
+
+  Map validations = {
+    'content.text': { 'isLongerThan' : 5 }
+  };
+
   CommentFormComponent() : super() {
     event_handlers.add(event: 'click', role: 'submit', handler: (self,p) {
-      var new_comment = new CommentComponent();
-      new_comment.body = self.dom_element.querySelector('textarea').value;
-      self.parent.addChild(new_comment);
+      self.children[0].text = self.children[0].dom_element.querySelector('textarea').value;
+      if(this.validate(deep: true)) {
+        print("It's valid!");
+        var new_comment = new CommentComponent();
+        new_comment.body = self.children[0].dom_element.querySelector('textarea').value;
+        self.parent.addChild(new_comment);
+      }
     });
   }
 }
 
 class TextAreaComponent extends Component {
-  final List attribute_names = ["text"];
+  final List attribute_names = ["text", "validation_errors_summary"];
 }
 
 main() {

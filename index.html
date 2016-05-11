@@ -18,7 +18,10 @@
     <h1>Hello, Dart!</h1>
 
     <div data-component-class="CommentFormComponent">
-      <textarea data-component-class="TextArea"></textarea>
+      <div data-component-class="TextAreaComponent" data-component-roles="content">
+        <textarea data-component-property="text" data-component-property-attr-name="value"></textarea>
+        <div data-component-property="validation_errors_summary"></div>
+      </div>
       <br/>
       <button data-component-class="ButtonComponent" data-component-property="caption" data-component-roles="submit">Submit Comment</button>
     </div>

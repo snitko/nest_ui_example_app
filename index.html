@@ -8,6 +8,12 @@
       div[data-component-class=CommentComponent] div[data-component-part=delete] {
         color: red; cursor: pointer; font-size: 80%;
       }
+      div[data-component-property=validation_errors_summary] {
+        color: red; font-size: 80%; padding: 0.5em;
+      }
+      .errors textarea {
+        background-color: #F5BDBC; border: solid 1px red;
+      }
     </style>
 
     <script type="application/dart" src="app.dart"></script>
@@ -20,7 +26,7 @@
     <div data-component-class="CommentFormComponent">
       <div data-component-class="TextAreaComponent" data-component-roles="content">
         <textarea data-component-part="value_holder"></textarea>
-        <div data-component-property="validation_errors_summary"></div>
+        <div style="display: none;" data-component-property="validation_errors_summary"></div>
       </div>
       <br/>
       <button data-component-class="ButtonComponent" data-component-property="caption" data-component-roles="submit">Submit Comment</button>

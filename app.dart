@@ -32,6 +32,7 @@ class CommentFormComponent extends Component {
         var new_comment = new CommentComponent();
         new_comment.body = self.children[0].value;
         self.parent.addChild(new_comment);
+        self.applyToChildren('reset');
       }
     });
   }

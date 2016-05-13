@@ -44,9 +44,7 @@ class TextAreaComponent extends FormComponent {
 main() {
   var logger = new Logmaster([new ConsoleReportAdapter()]);
   try {
-    var root         = new RootComponent();
-    root.dom_element = querySelector('body');
-    root.initChildComponents();
+    new NestUIApp();
   } catch(e) {
     logger.capture(e);
   }

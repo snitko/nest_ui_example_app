@@ -6,4 +6,3 @@ author: Roman Snitko <roman.snitko@gmail.com>
 
 dependencies:
   nest_ui:
-    path: '../nest_ui'

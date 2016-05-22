@@ -38,7 +38,7 @@ class CommentFormComponent extends Component {
   }
 }
 
-class TextAreaComponent extends FormComponent {
+class TextAreaComponent extends FormFieldComponent {
 }
 
 main() {
